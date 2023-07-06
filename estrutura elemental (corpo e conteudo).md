@@ -10,7 +10,8 @@ a estrutura física é composta por quatro elementos fundamentais e a lógica eh
 # body
 eh a parte mais interessante em si, ja que consiste em grupos de objects (estes objects sao conjuntos de dados que criam os atributos, definem as propiedades e o tipo de dados, podendo ter multiplos tipos de dados, sendo uma das partes mais diversas do pdf e que constituem o corpo bruto) que constroem o conteudo bruto do arquivos, eses object podem ser representados como **arvores binarias**
 eles seguem uma ordem inicial de (1..n), nao sendo necessariamente sequencial
-vamos ver mais sobre lah na frente
+
+<sub>vamos ver mais sobre lah na frente</sub>
 
 # cross-reference
 

@@ -75,5 +75,12 @@ outra curiosidade bem interessante, eh que caso o pdf esteja encriptado ele iria
 
 porem, isto eh soh pra criar uma ideia fudamental do corpo estutural e seus comportamento; tem bastante conteudo por ai caso algm se interesse em dev estes tipos de arquivos, porem espero que tenha ficado claro as bases que permitem que esse tipo de arquivo seja tao flexivel e tao amplamente utilizado, basta um leitor minimamente bem trabalhado (ou nem tanto) que sua implementaçao sera bem incorporada por qlqr sistema e arch
 
-caso tenha interesse em saber mais, recomendo a leitura da documentaçao do *pymudf* , uma api bem interessante e com bastante docs, alem da _iso 32000_, tem tmb disponivel uma documentaçao aqui () e aqui ()
+caso tenha interesse em saber mais, recomendo a leitura da documentaçao do *pymudf* , uma api bem interessante e com bastante docs, alem da _iso 32000_
+tem tmb disponivel uma documentaçao aqui 
+
+([https://www.oreilly.com/library/view/developing-with-pdf/9781449327903/ch01.html])
+
+e uma explicaçao do que jah vimos aqui, que foi uma das principais referencias
+
+([https://blog.didierstevens.com/2008/04/09/quickpost-about-the-physical-and-logical-structure-of-pdf-files/])
 

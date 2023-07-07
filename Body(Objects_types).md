@@ -36,7 +36,7 @@ por poderem ser codificadas e comprimidas de diferentes tipos de codigos arbitra
 bem, nem precisso explicar o potencial disso neh
 
 # stream (filters)
-### certo, jah sabemos que stream podem ser blocos de bytes de grande tamanho, entao a pergunta que fica eh, como comprimimos e descomprimimos _(lembrando que essa compressao em multiplos casos eh definida como uma interpretaçao, ou seja, digamos que queremos "comprimir" um tipo de fonte ou imagem de grande tamanho, o mecanismo em si pode ser chamado de codificaçao ou interpretaçao, mas vamos usar compressao pq geralmente eh o termo que mais veremos na documentaçao original)_ 
+### certo, jah sabemos que stream podem ser blocos de bytes de grande tamanho, entao a pergunta que fica eh, como comprimimos e descomprimimos _(lembrando que essa compressao em multiplos casos eh definida como uma interpretaçao, ou seja, digamos que queremos "comprimir" um tipo de fonte ou imagem de grande tamanho (ou seja, um pedaço de code ou um pedaço de bytes que representam uma imagem ou grafico), o mecanismo em si pode ser chamado de codificaçao ou interpretaçao, mas vamos usar compressao pq geralmente eh o termo que mais veremos na documentaçao original)_ 
 e eh ai que entra a necessidade dos _filters_ (do tipo `dictionary`). 
 
 entao este mecanismo podemos dizer que define as propiedades de compressao do **_stream_**, podendo conter code de outro tipo que nao seja os que vimos anteriormente
@@ -56,16 +56,26 @@ alguns filters que geralmente vamos ver em diversos documentos
 > geralmente veremos em compressao de imagens compativeis com jpeg/jfif
 
 
+
+
 vejamos agr uma revisao grafica que pode acabar esclarecendo este assunto
 
 ![layout of pdf](https://gendignoux.com/blog/images/pdf-basics/simplefile-by-nc-sa.png)
 
-aqui podemos ver o corpo de um pdf e dentro podemos observar alguns `dictionary` dentro de **_object_** que constituem o **body** (verde)
+aqui podemos ver o corpo de um pdf e dentro podemos observar alguns `dictionary` dentro de alguns **_objecst_** que constituem o **body** (verde)
 
 ![stream body](https://gendignoux.com/blog/images/pdf-basics/objstm-by-nc-sa.png)
 
 e aqui temo um **body** constituido de **_object_** do tipo _stream_, no qual temos uma invocaçao dos atributos que existem em _stream_ (do tipo `dictionary`), assim como seus filters pra comprimirmos e identificar o bloco de bytes dentro do _stream_ (pode ser um codigo javascript, um grafico, um xml ou qlqr outro dos tipos que sao admitidos)
 
-neste caso podemos conter **objects** dentro de um _stream_)
+neste caso podemos conter **objects** dentro de um _stream_,[ como jah falei, mas logo surge a pergunta, pq temos object contidos em blocos de bytes do tipo _stream_??
+
+vejamos agr os _external-objects_, de forma bem resumida, sao **objects** que podemos comprimir dentro de um bloco _stream_, o qual acabara sendo processado apenas qndo o _stream_ no qual ta contido seja invocado (deifinimos as propiedades do **_external_object_** com um dado do tipo `dictionary` no qual definimos a _chave_ como o **_external-object_** e seu _value_ como o tipo de **_external-object_** (existem varios tipos)), isto eh bastante importante na hora de termos uma flexibilidade maior dentro do arquivo pdf a ser processador pela maquina qnto pra poupar mais processamento caso este (o **_external-object_**) nao seja explicitamente necessario no corpo do pdf, sendo apenas invocado dentro do seu determinado **object** no qual temos o dado do tipo _stream_ e definimos este como um **_external-object_**, pra isso utilizamos a _chave_value_ (`dictionary type`) anteriormente mencionado
+>
+> eu to mencionando isto pq se respirarmos um pouco e observamos com delicadeza, podemos ver que este tipo de stream parece uma oportunidade bastante conveniente pra carregar um code ou object o qual nao iriamos
+>querer que seja mapeado de forma direta, sendo apenas carregado pra memoria durante o processamento de um pedaço especifico do documento, capicci?? ::mage_man: :pinched_fingers:
+
+
+
 
 

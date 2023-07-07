@@ -56,26 +56,42 @@ alguns filters que geralmente vamos ver em diversos documentos
 > geralmente veremos em compressao de imagens compativeis com jpeg/jfif
 
 
+![um object onde definimos propiedades do pedaço de bytes (usamos `dictionarys type` pra isso) contido em um _stream_](https://github.com/exoForce01/pdf-init_research/blob/main/filter_example.jpeg?raw=true)
+
+entao, como podemos ver, temos um object com o <sub>id</sub> *4* onde temos os argumentos pra criaçao de um bloco de bytes (identificaçao do _stream_) onde definimos o tipo de compressao, o tipo de _external-object_ e outras especificidades (tdo feito com elementos `dictionary`) pra dps carregarmos o conteudo de _stream_
 
 
-vejamos agr uma revisao grafica que pode acabar esclarecendo este assunto
+
+
+### vejamos agr uma revisao grafica que pode acabar esclarecendo este assunto
 
 ![layout of pdf](https://gendignoux.com/blog/images/pdf-basics/simplefile-by-nc-sa.png)
 
-aqui podemos ver o corpo de um pdf e dentro podemos observar alguns `dictionary` dentro de alguns **_objecst_** que constituem o **body** (verde)
+aqui podemos ver o corpo de um pdf e dentro podemos observar alguns `dictionary` dentro de alguns **_objects_** que constituem o **body** (verde)
 
 ![stream body](https://gendignoux.com/blog/images/pdf-basics/objstm-by-nc-sa.png)
 
 e aqui temo um **body** constituido de **_object_** do tipo _stream_, no qual temos uma invocaçao dos atributos que existem em _stream_ (do tipo `dictionary`), assim como seus filters pra comprimirmos e identificar o bloco de bytes dentro do _stream_ (pode ser um codigo javascript, um grafico, um xml ou qlqr outro dos tipos que sao admitidos)
+(lembrando que filters podem cooperar dentro do stream pra comprimir de forma alterada ou simbioticamente)
 
-neste caso podemos conter **objects** dentro de um _stream_,[ como jah falei, mas logo surge a pergunta, pq temos object contidos em blocos de bytes do tipo _stream_??
 
-vejamos agr os _external-objects_, de forma bem resumida, sao **objects** que podemos comprimir dentro de um bloco _stream_, o qual acabara sendo processado apenas qndo o _stream_ no qual ta contido seja invocado (deifinimos as propiedades do **_external_object_** com um dado do tipo `dictionary` no qual definimos a _chave_ como o **_external-object_** e seu _value_ como o tipo de **_external-object_** (existem varios tipos)), isto eh bastante importante na hora de termos uma flexibilidade maior dentro do arquivo pdf a ser processador pela maquina qnto pra poupar mais processamento caso este (o **_external-object_**) nao seja explicitamente necessario no corpo do pdf, sendo apenas invocado dentro do seu determinado **object** no qual temos o dado do tipo _stream_ e definimos este como um **_external-object_**, pra isso utilizamos a _chave_value_ (`dictionary type`) anteriormente mencionado
+neste caso podemos conter **objects** (sejam _external-object_ pra elementos graficos ou de outro tipo aceito pelo ISO, ou seja _indirect-objects_) dentro de um _stream_, como jah falei, mas logo surge a pergunta, pq algumas vezes temos **object** contidos em blocos de bytes do tipo _stream_??
+
 >
 > eu to mencionando isto pq se respirarmos um pouco e observamos com delicadeza, podemos ver que este tipo de stream parece uma oportunidade bastante conveniente pra carregar um code ou object o qual nao iriamos
 >querer que seja mapeado de forma direta, sendo apenas carregado pra memoria durante o processamento de um pedaço especifico do documento, capicci?? ::mage_man: :pinched_fingers:
 
 
 
+## indirect-object 
 
+um detalhe importante eh que varias  vezes veremos um tipo de **object** chamado de _indirect-object_, eh facil se pensarmos nele como um simbolo ou um link de um **object** jah existente, o qual podemos querer utilizar varias vezes durante nosso corpo de pdf, isto eh uma propiedade do _polimorfismo_, como mencionei no primeiro post
+
+> 'alguns atributos e objetos podem ser utilizados em objetos distintos, porém,com implementações lógicas diferentes.’
+>
+
+deixo aqui uma explicaçao que fiz no post original, mas caso vc jah conheça o polimorfismo, talvez nem seja mto necessario, porem soh pra fins de esclarecimento
+
+digamos que temos o **object** *5* que define uma pagina ou eh uma folha de uma arvore de paginas (lembre-se que os **object** sao tidos como *arvores binarias*), entao esse outro **object** chama o **object** *4*, porem, lah na frente iremos precissar do **object** *4* qndo estivermos utilizando o **object** *8*, logo podemos definir o **object** *4* como um _indirect object_ e como invocamos o **object** *4* varias vezes ao longo do body??  
+bem, tdos os _indirect object_ possuim um <sub>id</sub> unico, que pode ser invocado dentro de outros **objects** e _streams_ e eh alocado dentro do *xref* (lembre qndo comentei sobre subobject)
 

@@ -1,4 +1,5 @@
-# pdf-init_research
+## pdf-init_research
+# pesquisa sobre pdf e seus vetores de ataque 
 esta eh uma pesquisa que fiz ha alguns meses atras sobre pdf, tdo começo como anotaçoes de estudo mas acabou virando uma serie de post no *@rubyofsec*, motivado por ver diversas pessoas implementando ou falando de exploits em arquivos pdf,
 mas que infelizmente acabavam sabendo apenas como implementar o exploit, mas nao entendiam a fundo sua natureza ou comportamento e ainda pior, nao conheciam as falhas criticas existentes em diversos arquivos do dia-a-dia
 acabei tentando organizar estas notas em varios posts que ficaram um pouco desorganizados, mas tentei organizar e esclarecer algumas questoes um pouco mais abstratas, estea pesquisa tmb pode ser orientada pra dev que desejam trabalhar com 

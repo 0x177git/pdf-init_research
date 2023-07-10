@@ -2,7 +2,7 @@ bem, como jah comentei, o *body* eh composto de _objects_ e como explicar os obj
 
 > "eles são os blocos de construção sobre os quais o PDF se sustenta”
  
-os objects sao elementos com os quais podemos criar as propiedades do pdf, alem de escrever o conteudo (logical), existem 8 tipos de **dados elementais** do tipo _object_
+os objects sao estruturas de elementos com os quais podemos criar as propiedades do pdf, alem de escrever o conteudo (logical), existem 8 tipos de **dados elementais** contido no tipo _object_
 
 `Boolean, integer, real, name, string, array, dictionary, and stream`
 
@@ -12,7 +12,7 @@ cada um deles compartilha suas funçoes e propiedades, mas aqui vamos focar espe
 
 # dictionary
 
-### geralmente eh o tipo de object que mais vamos ver presentes numa analise do corpo de um pdf, este tipo de elemento consiste em uma chave e seu valor (os quais podem invocar classes internas e tratamentos de multiplos outros tipos),
+### geralmente eh o tipo de elemento dentro de um object que mais vamos ver presentes numa analise do corpo de um pdf, este tipo de elemento consiste em uma chave e seu valor (os quais podem invocar classes internas e tratamentos de multiplos outros tipos),
 pode ser recursivo e invocar outros tipos de dados, vou explicar melhor
 
 ![structure](https://didierstevens.files.wordpress.com/2008/04/pdf-physical.png)
@@ -29,10 +29,10 @@ existem multiplos tipos de definiçoes de chave dentro do `dictionary`, alem de 
 
 
 # streams
-### esse tipo de elemento eh o mais expressivo dentro de um arquivo, podem ser dados comprimidos, imagens, graficos e ateh outros _objects_ dentro de si
+### esse tipo de elemento eh o mais expressivo (ou seja, qndo vemos blocos de bytes que nao estao dentro das codificaçoes utf8 ou unicode, geralmente sao estes) dentro de um arquivo, podem ser dados comprimidos, imagens, graficos e ateh outros _objects_ dentro de si
 fazem que o pdf seja mais potente e pequeno
 elementos streams permite carregar *_javascript_* dentro do pdf, alem de carregar grandes dados dentro de si, que podem ser representados de varias maneiras
-por poderem ser codificadas e comprimidas de diferentes tipos de codigos arbitrarios **_(xml, js, imagens, anotaçoes especiais)_** outros objects e elementos especiais invisiveis ao usuario final 
+por poderem ser codificadas e comprimidas de diferentes tipos de codigos arbitrarios **_(xml, js, imagens, anotaçoes especiais)_** outros _objects_ e elementos especiais invisiveis ao usuario final 
 bem, nem precisso explicar o potencial disso neh
 
 # stream (filters)

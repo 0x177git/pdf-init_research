@@ -14,9 +14,9 @@ ou ateh mesmo como surgiram suas falham
 sempre que usarem porfavor referenciem meu canal do telegram *@rubyofsec*, se puderem, uma estrelinha seria dms <3
 espero que gostem e mais do que isso, espero que entendam e expandam o que jah sabem
 
-## estrutursa elemental (corpo e conteudo)
+## estrutura elemental (corpo e conteudo)
 
-a principal estrutura abstrata do pdf, contendo quatro segmento, o _header_ (metadados, versao do pdf), o _body_ (esturtura de dados que compoem o conteudo), a tabela de referencias (implementa o indice de itens (_objects & sub-objects_) e funciona como estrutura de lista a qual o processador ira renderizar e mapear, alem de possuir atualizaçoes que permitem indexar multiplos _body_ e carregar grandes blocos de *_streams_*) e o _trailer_ (indica o inicio do pdf desde o header e um resumo dos itens no _cross-reference_) 
+a principal estrutura abstrata do pdf, contendo quatro segmento, o _header_ (metadados, versao do pdf), o _body_ (estrutura de dados que compoem o conteudo), a tabela de referencias (implementa o indice de itens (_objects & sub-objects_) e funciona como estrutura de lista a qual o processador ira renderizar e mapear, alem de possuir atualizaçoes que permitem indexar multiplos _body_ e carregar grandes blocos de *_streams_*) e o _trailer_ (indica o inicio do pdf desde o header e um resumo dos itens no _cross-reference_) 
 
 ## Body (objects_type)
 aprofundo na estrutura e os elemento que constroem o conteudo do pdf, alem dos tipos de dados e sua dinamica durante processamento e analise estatico

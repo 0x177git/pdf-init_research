@@ -15,7 +15,7 @@ eles seguem uma ordem inicial de (1..n), nao sendo necessariamente sequencial
 
 # cross-reference
 
-eh composto por uma tipo de tabela que aponta a cada inicio de object, assim como seu identificador (1..n), seu tamanho e eh apontado por seçoes de bytes (offset)
+eh composto por um tipo de tabela que aponta a cada inicio de object, assim como seu identificador (1..n), seu tamanho e eh apontado por seçoes de bytes (offset)
 
 
 # Trailer

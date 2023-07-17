@@ -15,16 +15,16 @@ ou ateh mesmo como surgiram suas falham
 sempre que usarem porfavor referenciem meu canal do telegram *@rubyofsec*, se puderem, uma estrelinha seria dms <3
 espero que gostem e mais do que isso, espero que entendam e expandam o que jah sabem
 
-## estrutura elemental (corpo e conteudo)
+## [estrutura elemental (corpo e conteudo)](https://github.com/exoForce01/pdf-init_research/blob/main/estrutura%20elemental%20(corpo%20e%20conteudo).md)
 
 a principal estrutura abstrata do pdf, contendo quatro segmento, o _header_ (metadados, versao do pdf), o _body_ (estrutura de dados que compoem o conteudo), a tabela de referencias (implementa o indice de itens (_objects & sub-objects_) e funciona como estrutura de lista a qual o processador ira renderizar e mapear, alem de possuir atualizaçoes que permitem indexar multiplos _body_ e carregar grandes blocos de *_streams_*) e o _trailer_ (indica o inicio do pdf desde o header e um resumo dos itens no _cross-reference_) 
 
-## Body (objects_type)
+## [Body (objects_type)](https://github.com/exoForce01/pdf-init_research/blob/main/Body(Objects_types).md)
 aprofundo na estrutura e os elemento que constroem o conteudo do pdf, alem dos tipos de dados e sua dinamica durante processamento e analise estatico
 
-## vetores de ataque
+## [vetores de ataque](https://github.com/exoForce01/pdf-init_research/blob/main/vetores-de-ataque.md)
 explico algumas bases conceituais pra entender o contreudo sobre as vulnerabilidades existentes e divido elas em dois tipos
 
-*nativas* : estas sao aquelas que existem em algumas versoes antigas do pdf e permitem exfiltrar dados e carregar payloads, assim como algumas que ainda existem ainda e permitem ofuscar vulnerabilidades hibridasa pra explorar vulnerablidades no reader ou *OS*, porem nao precisam de supplychains pra serem carregadas
+[*nativas*](https://github.com/exoForce01/pdf-init_research/blob/main/vulnerabilidades%20nativas.md) : estas sao aquelas que existem em algumas versoes antigas do pdf e permitem exfiltrar dados e carregar payloads, assim como algumas que ainda existem ainda e permitem ofuscar vulnerabilidades hibridasa pra explorar vulnerablidades no reader ou *OS*, porem nao precisam de supplychains pra serem carregadas
 
 *hibridas*: vulnerabilidades que existem nos readers, *OS*, ou qlqr outro elemento externo ao corpo do pdf, porem podem ser carregadas pelo pdf de forma externa pra elevar privilegios e exfiltrar dados

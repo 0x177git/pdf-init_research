@@ -19,8 +19,8 @@ eh composto por um tipo de tabela que aponta a cada inicio de object, assim como
 
 
 # Trailer
-aponta a cross-reference, inclui o tamanho elementos, indica o cross-reference por espaço de byte e o ponto inicial do body (1..n %1)pu seja o primeiro object do body
-cabe dizer que este espaço eh o primeiro a ser posto na fila de processamento, ou seja, a ser processado durante processamento por isso contem os **apontadores fundamentais** do arquivo, que eh a **_cross-reference_**, onde podemos localizar os objects por espaços de bytes(offset) ou seja
+aponta á cross-reference, inclui o tamanho elementos, indica o cross-reference por espaço de byte e o ponto inicial do body (1..n %1)pu seja o primeiro object do body
+cabe dizer que este espaço eh o primeiro a ser posto na fila de processamento por isso contem os **apontadores fundamentais** do arquivo, que eh a **_cross-reference_**, onde podemos localizar os objects por espaços de bytes(offset) ou seja
 > xref
 > 
 > 0 8
